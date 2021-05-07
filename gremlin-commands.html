@@ -11,7 +11,6 @@
 
 g.addE("friend").property("from" , "2001").from(g.V().has("name" , "Ahsen Riaz build-in key")).to(g.V().has("name" , "Ahsen Riaz"))
 
-
 :> g.V() // get all the vertices
 
 :> g.E() // get all the edges
@@ -68,7 +67,10 @@ Same for the edges
             OR
 :> g.V(21).out().valuesMap()   // it can also be used to get properties but the better way is elementMap()
 
+
 :> g.V(21).out().in().values() // here we are saying that fing all the out-vertix of the vertex with id 21 and once it get that out-vertex than find all the vertices which have edges coming inside that vertex
+
+:> g.V(21).out().hasNext()  // it will return us a true or false if there is a next vertice attached to the out-vertix
 
 
 
