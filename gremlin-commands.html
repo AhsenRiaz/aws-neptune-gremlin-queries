@@ -1,0 +1,78 @@
+
+
+:> g.V().drop() // delete all vertices
+
+:> g.addV("person") // creates a vertex
+
+:> g.addV("person").property("name" , "ahsen riaz") // creates a vertice along with property 
+// where person is the label and name is the property
+
+:> g.addE("friend").from(g.V().has("name" , "ahsen riaz")).to(g.V().has("ahsen riaz with key"))
+
+g.addE("friend").property("from" , "2001").from(g.V().has("name" , "Ahsen Riaz build-in key")).to(g.V().has("name" , "Ahsen Riaz"))
+
+
+:> g.V() // get all the vertices
+
+:> g.E() // get all the edges
+
+:> g.V().count()  // return the total count of the vertices
+
+:> g.E().count()  // return the total count of the edges 
+
+:> g.V().hasLabel("Person")  //returns the exact vertex which has label "Person"
+
+:> g.E().hasLabel("Person") // returns the exact edge which has label of "Person"
+
+:> g.V().has("name" , "ahsen riaz")  // returns the exact vertex which has key value pair passed as an argument in the parameter
+
+:> g.E().has("type" , "best") // returns the edge which has type "best"
+
+:> g.E().has("friend" , "type" , "best") // returns the vertex which has label friend and type best
+
+:> g.V().has("person","name" , "ahsen riaz") // we can also pass label in the has() // returns the vertex which has label person
+and key value name : ahsen riaz
+
+:> g.V().in() // returns all the vertices which has edges coming in them
+
+:> g.V().Ein() // returns all the edges which are somehow coming in a vertex or vertices
+
+:> g.V().out()  // returns all the vertices which has edges going out of them
+
+;> g.V().outE() // returns all the edges which are going out of the vertices
+
+:> g.V().both() // returns the vertices which has edges coming in them and going out from them
+
+:> g.V().valueMap() // returns all the vertices and the properties associated to them
+
+:> g.E().valueMap() // returns all the properties attached to the all the edges || if none then empty object
+
+:> g.V().elementMap() // elementMap is a more better option than using valueMap becase valueMap does not return the label of the vertices and other information where as elementMap returns everything attached to a vertex
+
+Same for the edges 
+
+:> g.E().elementMap() 
+
+:> g.V().has("name" , "Ahsen Riaz ").out() // what im asking here is that give me the vertex which is connected to the edge going out from the vertex defined in the has method (so in short it will give us the out-vertex)
+
+:> g.V().has("name" , "Ahsen Riaz").out().out() // now what im saying is that give me the out vertex and the out vertex of the vertex which the which it found first
+
+:> g.V(23).elementMap() // we will pass id as argument in the V() and will return us all the properties related to the specific vertex
+
+:> g.V(23).values() // it will also return us the properties related to it but not the label and the built in id 
+
+:> g.V(21).out().values("name") // if we do it this way it will return us only name cause we specified that we want name
+//we are saying that find the vertix with id 21 and than get the out-vertex and return us the name of that out-vertix
+            OR  
+:> g.V(21).out().elementMap()  // this way we can get all the properties associated to it
+            OR
+:> g.V(21).out().valuesMap()   // it can also be used to get properties but the better way is elementMap()
+
+:> g.V(21).out().in().values() // here we are saying that fing all the out-vertix of the vertex with id 21 and once it get that out-vertex than find all the vertices which have edges coming inside that vertex
+
+
+
+
+
+
+
