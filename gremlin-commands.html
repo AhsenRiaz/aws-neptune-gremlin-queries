@@ -80,7 +80,14 @@ g.V().has('person', 'first_name', 'Ted').
 repeat(
 out('friends')
 ).times(2).
-values('first_name')
+values('first_name') 
+
+Written in English, the traversal reads as
+ Given all the vertices in the graph
+ Find all the person vertices with a first_name of Ted .
+ Repeat the following step or steps.
+ (Repeated block) Walk the outgoing friends edges to the adjacent vertex.
+ Execute the repeated step(s) t
 
 
 
