@@ -72,6 +72,16 @@ Same for the edges
 
 :> g.V(21).out().hasNext()  // it will return us a true or false if there is a next vertice attached to the out-vertix
 
+:> g.V().has("person" , "first_name" , "Ted").out().out().values()
+
+RECURSIVE TRAVERSALS
+"We use this step when we dont know how many times the traversal should be called like if i want to find friends of friends it can be used"
+g.V().has('person', 'first_name', 'Ted').
+repeat(
+out('friends')
+).times(2).
+values('first_name')
+
 
 
 
