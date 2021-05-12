@@ -100,6 +100,12 @@ values('first_name')
 Return the first_name .
 
 
+count() step helps us to count the number of vertices next to a vertex
+g.V().has("person" , "first_name" , "Ted").both("friends").count()
+in this traverdal given a traversal source g we find the vertex with property dave and then walk to the edges with label friends regardless of their direction
+and count the vertex connected to those edges
+
+
 
 
 
