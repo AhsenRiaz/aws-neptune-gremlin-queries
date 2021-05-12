@@ -87,7 +87,17 @@ Written in English, the traversal reads as
  Find all the person vertices with a first_name of Ted .
  Repeat the following step or steps.
  (Repeated block) Walk the outgoing friends edges to the adjacent vertex.
- Execute the repeated step(s) t
+ Execute the repeated step(s)
+
+
+==> Find all the vertices with label person and find that specific vertex which has firstname as Dave and then go through all the 
+"works_with" edges and find those vertices which has end_year property and filter out those vertices which has less than or equal to 2018 value
+and then dont return the edge properties insted give the vertex properties and which property first_name property
+g.V().has('person' ,'first_name', 'Dave').
+bothE('works_with').has('end_year',lte(2018)).
+otherV().
+values('first_name')
+Return the first_name .
 
 
 
